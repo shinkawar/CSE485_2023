@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `tacgia` (
   PRIMARY KEY (`ma_tgia`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
-INSERT INTO `tacgia` (`ma_tgia`, `ten_tgia`) VALUES 
+INSERT INTO `tacgia` (`ma_tgia`, `ten_tgia`, `hinh_tgia`) VALUES 
 (1, 'Nhacvietplus', NULL),
 (2, 'Sưu tầm', NULL),
 (3, 'Sandy', NULL),
@@ -20,7 +20,6 @@ INSERT INTO `tacgia` (`ma_tgia`, `ten_tgia`) VALUES
 (6, 'Night Stalker', NULL),
 (7, 'Phạm Phương Anh', NULL),
 (8, 'Tâm tình', NULL);
-
 
 
 CREATE TABLE baiviet (
