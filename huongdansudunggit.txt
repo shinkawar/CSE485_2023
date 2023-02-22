@@ -1,0 +1,7 @@
+lấy dữ liệu xuống:
+git clone https://github.com/shinkawar/CSE485_2023.git
+
+đẩy dữ liệu lên:
+git add "ten file"
+git commit -m "chú thích"
+git push origin
