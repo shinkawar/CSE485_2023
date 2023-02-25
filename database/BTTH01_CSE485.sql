@@ -32,7 +32,7 @@ CREATE TABLE baiviet (
   `ngayviet` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `hinhanh` VARCHAR(200) DEFAULT NULL,
   PRIMARY KEY (`ma_bviet`),
-  FOREIGN KEY (`ma_tloai`) REFERENCES tenloai(ma_tloai),
+  FOREIGN KEY (`ma_tloai`) REFERENCES theloai(ma_tloai),
   FOREIGN KEY (`ma_tgia`) REFERENCES tacgia(ma_tgia)
 )ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
@@ -51,15 +51,13 @@ INSERT INTO `baiviet` (`ma_bviet`,`tieude`,`ten_bhat`,`ma_tloai`,`tomtat`,`noidu
 (12, 'Cây và gió', 'Cây và gió', 7, 'Em và anh, hai đứa quen nhau thật tình cờ. Lời hát của anh từ bài hát “Cây và gió” đã làm tâm hồn em xao động. Nhưng sự thật phũ phàng rằng em chưa bao giờ nói cho anh biết những suy nghĩ tận sâu trong tim mình. Bởi vì em nhút nhát, em không dám đối mặt với thực tế khắc nghiệt, hay thực ra em không dám đối diện với chính mình.', NULL, 7, '2013/12/5', NULL),
 (13, 'Như một cách tạ ơn đời', 'Người thầy', 2,'Ánh nắng cuối ngày rồi cũng sẽ tắt, dòng sông con đò rồi cũng sẽ rẽ sang một hướng khác. Nhưng việc trồng người luôn cảm thụ với chuyến đò ngang, cứ tần tảo đưa rồi lặng lẽ quay về đưa sang. Con đò năm xưa của Thầy nặng trĩu yêu thương, hy sinh thầm lặng.', NUll, 8, '2014/1/2', NULL);
 
-
-
-CREATE TABLE tenloai (
+CREATE TABLE theloai (
   `ma_tloai` INT UNSIGNED NOT NULL,
   `ten_tloai` varchar(300) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`ma_tloai`)
 )ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
-INSERT INTO `tenloai` (`ma_tloai` ,`ten_tloai`) VALUES 
+INSERT INTO `theloai` (`ma_tloai` ,`ten_tloai`) VALUES 
 (1, 'Nhạc trẻ'),
 (2, 'Nhạc trữ tình'),
 (3, 'Nhạc cách mạng'),
@@ -68,3 +66,20 @@ INSERT INTO `tenloai` (`ma_tloai` ,`ten_tloai`) VALUES
 (6, 'POP'),
 (7, 'Rock'),
 (8, 'R&B');
+
+CREATE TABLE users (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
+  `hoten` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+/*  `gioitinh` int(11) NOT NULL,
+  `avatar` varchar(50) COLLATE utf8_vietnamese_ci NULL,
+  `avatar` varchar(50) COLLATE utf8_vietnamese_ci DEFAULT 'upload/images-avatar/avatar_default.jpg', */
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+
+INSERT INTO `users` (`id` ,`username`, `password`, `hoten`) VALUES 
+(01, 'nguyenthang', 'thang123', 'Nguyễn Bá Thắng'),
+(02, 'phamthien', 'thien123', 'Phạm Đình Thiên'),
+(03, 'vutam', 'tam123', 'Vũ Đức Tâm');

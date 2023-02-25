@@ -67,3 +67,26 @@ INNER JOIN tacgia ON baiviet.ma_tgia = tacgia.ma_tgia;
 /*j. Tạo 1 thủ tục có tên sp_DSBaiViet với tham số truyền vào là Tên thể loại và trả về danh sách 
 Bài viết của thể loại đó. Nếu thể loại không tồn tại thì hiển thị thông báo lỗi. (2 đ)*/
 
+
+USE `BTTH01_CSE485`;
+ALTER TABLE theloai ADD SLBaiViet INT UNSIGNED NOT NULL;
+
+CREATE TRIGGER tg_CapNhatTheLoai AFTER INSERT, UPDATE, DELETE ON baiviet ()
+FOR EACH ROW
+BEGIN
+    UPDATE theloai SET SLBaiViet = (
+        SELECT COUNT(*) FROM baiviet WHERE ma_tloai = theloai.ma_tloai
+    );
+END;
+
+CREATE TRIGGER tg_CapNhatTheLoai BEFORE INSERT ON baiviet
+  FOR EACH ROW BEGIN
+    INSERT INTO baiviet SET ma_bviet = NEW.ma_tloai
+    DELETE FROM baiviet WHERE ma_bviet = NEW.ma_tloai
+    UPDATE theloai SET SLBaiViet = SLBaiViet + 1 WHERE ma_bviet = NEW.ma_tloai
+  END
+
+
+CREATE TRIGGER tg_CapNhatTheLoai BEFORE INSERT ON baiviet
+  FOR EACH ROW 
+    UPDATE theloai SET SLBaiViet = SLBaiViet + 1 WHERE ma_tloai = NEW.ma_tloai;
