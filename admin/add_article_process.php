@@ -23,7 +23,7 @@
     if (mysqli_num_rows($result_ma_tgia) > 0) {
         $ma_tgia = mysqli_fetch_assoc($result_ma_tgia);
         $tacgia = $ma_tgia['ma_tgia'];
-        echo("Thêm thành công");
+        header("Location: article.php");
       } else {
         echo("Không tìm thấy thể loại có tên '$tacgia'");
       }
