@@ -71,7 +71,9 @@ CREATE TABLE users (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
-  `hoten` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `full_name` VARCHAR(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `email` VARCHAR(100) NOT NULL UNIQUE,
+  `loai_user` TINYINT(1) NOT NULL DEFAULT 0,
 /*  `gioitinh` int(11) NOT NULL,
   `avatar` varchar(50) COLLATE utf8_vietnamese_ci NULL,
   `avatar` varchar(50) COLLATE utf8_vietnamese_ci DEFAULT 'upload/images-avatar/avatar_default.jpg', */
@@ -79,7 +81,8 @@ CREATE TABLE users (
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 
-INSERT INTO `users` (`id` ,`username`, `password`, `hoten`) VALUES 
-(01, 'nguyenthang', 'thang123', 'Nguyễn Bá Thắng'),
-(02, 'phamthien', 'thien123', 'Phạm Đình Thiên'),
-(03, 'vutam', 'tam123', 'Vũ Đức Tâm');
+INSERT INTO `users` (`username`, `password`, `full_name`, `email`, `loai_user`) VALUES 
+('thien113', 'thien123', 'phạm thiên', 'thien113@gmail.com', 1),
+('thang114', 'thang456', 'bá thắng', 'thang114@gmail.com', 1),
+('tam115', 'tam789', 'vũ tâm', 'tam115@gmail.com', 1),
+('test111', 'test999', 'test user', 'testuser@gmail.com', 0);
