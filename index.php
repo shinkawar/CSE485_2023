@@ -72,7 +72,7 @@
                     <img src="images/songs/cayvagio.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">
-                            <a href="" class="text-decoration-none">Cây, lá và gió</a>
+                            <a href="admin/detail_cvg.php" class="text-decoration-none">Cây, lá và gió</a>
                         </h5>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <img src="images/songs/csmt.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">
-                            <a href="" class="text-decoration-none">Cuộc sống mến thương</a>
+                            <a href="admin/detail_csmt.php" class="text-decoration-none">Cuộc sống mến thương</a>
                         </h5>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                     <img src="images/songs//longme.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">
-                            <a href="" class="text-decoration-none">Lòng mẹ</a>
+                            <a href="admin/detail_longme.php" class="text-decoration-none">Lòng mẹ</a>
                         </h5>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     <img src="images/songs/phoipha.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center">
-                            <a href="" class="text-decoration-none">Phôi pha</a>
+                            <a href="admin/detail_phoipha.php" class="text-decoration-none">Phôi pha</a>
                         </h5>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                     <img src="images/songs/noitinhyeubatdau.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-center my-title">
-                            <a href="" class="text-decoration-none">Nơi tình yêu bắt đầu</a>
+                            <a href="admin/detail_noitinhyeubatdau.php" class="text-decoration-none">Nơi tình yêu bắt đầu</a>
                         </h5>
                     </div>
                 </div>
